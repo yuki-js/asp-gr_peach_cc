@@ -4,9 +4,7 @@ jobs:
     - docker: yukijs/asp-gr_peach_cc:latest
   steps:
     - checkout
-    - run:
-      name: Get kernel
-      command: git clone https://github.com/ncesnagoya/asp-gr_peach_gcc-mbed.git
+    - run: git clone https://github.com/ncesnagoya/asp-gr_peach_gcc-mbed.git
     - run: wget http://toppers.jp/download.cgi/cfg-linux-static-1_9_5.gz; tar zxvf cfg-linux-static-1_9_5.gz
     - run: |
         git clone https://github.com/ncesnagoya/asp-gr_peach_gcc-mbed.git
