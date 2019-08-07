@@ -1,7 +1,8 @@
 version: 2
 jobs:
   build:
-    docker: yukijs/asp-gr_peach_cc:latest
+    docker:
+      - image: yukijs/asp-gr_peach_cc:latest
     steps:
       - checkout
       - run: git clone https://github.com/ncesnagoya/asp-gr_peach_gcc-mbed.git
@@ -16,6 +17,7 @@ jobs:
           make depend
           make
           popd
+
 workflows:
   version: 2
   build:
