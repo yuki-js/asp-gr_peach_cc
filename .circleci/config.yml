@@ -1,21 +1,21 @@
 version: 2
 jobs:
   build:
-    - docker: yukijs/asp-gr_peach_cc:latest
-  steps:
-    - checkout
-    - run: git clone https://github.com/ncesnagoya/asp-gr_peach_gcc-mbed.git
-    - run: wget http://toppers.jp/download.cgi/cfg-linux-static-1_9_5.gz; tar zxvf cfg-linux-static-1_9_5.gz
-    - run: |
-        git clone https://github.com/ncesnagoya/asp-gr_peach_gcc-mbed.git
-        pushd asp-gr_peach_gcc-mbed
-        git submodule update -i
-        popd
-    - run: |
-        pushd asp-gr_peach_gcc-mbed/examples/blinky
-        make depend
-        make
-        popd
+    docker: yukijs/asp-gr_peach_cc:latest
+    steps:
+      - checkout
+      - run: git clone https://github.com/ncesnagoya/asp-gr_peach_gcc-mbed.git
+      - run: wget http://toppers.jp/download.cgi/cfg-linux-static-1_9_5.gz; tar zxvf cfg-linux-static-1_9_5.gz
+      - run: |
+          git clone https://github.com/ncesnagoya/asp-gr_peach_gcc-mbed.git
+          pushd asp-gr_peach_gcc-mbed
+          git submodule update -i
+          popd
+      - run: |
+          pushd asp-gr_peach_gcc-mbed/examples/blinky
+          make depend
+          make
+          popd
 workflows:
   version: 2
   build:
