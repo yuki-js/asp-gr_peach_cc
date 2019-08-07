@@ -6,7 +6,10 @@ jobs:
     steps:
       - checkout
       - run: git clone https://github.com/ncesnagoya/asp-gr_peach_gcc-mbed.git
-      - run: wget http://toppers.jp/download.cgi/cfg-linux-static-1_9_5.gz; tar zxvf cfg-linux-static-1_9_5.gz
+      - run: |
+         wget http://toppers.jp/download.cgi/cfg-linux-static-1_9_5.gz
+         tar zxvf cfg-linux-static-1_9_5.gz
+         cp ./cfg asp-gr_peach_gcc-mbed/asp-1.9.2-utf8/cfg/cfg/cfg
       - run: |
           pushd asp-gr_peach_gcc-mbed
           git submodule update -i
