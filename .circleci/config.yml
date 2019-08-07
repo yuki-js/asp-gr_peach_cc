@@ -8,7 +8,6 @@ jobs:
       - run: git clone https://github.com/ncesnagoya/asp-gr_peach_gcc-mbed.git
       - run: wget http://toppers.jp/download.cgi/cfg-linux-static-1_9_5.gz; tar zxvf cfg-linux-static-1_9_5.gz
       - run: |
-          git clone https://github.com/ncesnagoya/asp-gr_peach_gcc-mbed.git
           pushd asp-gr_peach_gcc-mbed
           git submodule update -i
           popd
